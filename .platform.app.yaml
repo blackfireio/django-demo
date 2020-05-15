@@ -58,7 +58,7 @@ hooks:
   # The build hook runs before the application is deployed, and is useful for
   # assembling the codebase.
   build: |
-    pipenv install --system --deploy
+    pipenv install
     mkdir logs
     rm -rf logs
   deploy: |
