@@ -16,8 +16,3 @@ def comments(request):
     r = HttpResponse(template.render(context, request))
     return r
 
-def generate(request):
-    new_comments = [Comment(user=request.user, comment='Oh! That is awesome!') for i in range(1000)]
-    Comment.objects.bulk_create(new_comments)
-    r = HttpResponse('Comments generated!')
-    return r
