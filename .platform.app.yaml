@@ -12,6 +12,7 @@ type: 'python:3.7'
 # The build-time dependencies of the app.
 dependencies:
     python3:
+       pip: '20.1'
        pipenv: '2018.10.13'
 
 # The relationships of the application with services or other applications.
@@ -53,7 +54,6 @@ hooks:
   # The build hook runs before the application is deployed, and is useful for
   # assembling the codebase.
   build: |
-    pip install --upgrade pip
     pipenv install --system --deploy
     mkdir logs
     rm -rf logs
