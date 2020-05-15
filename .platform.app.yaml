@@ -57,5 +57,6 @@ hooks:
     pipenv install --system --deploy
     mkdir logs
     rm -rf logs
+    export BLACKFIRE_LOG_FILE=/var/log/app.log
   deploy: |
     python manage.py migrate
