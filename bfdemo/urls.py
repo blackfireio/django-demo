@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'comments/$', views.comments, name='comments'),
+    url(r'nplusone/$', views.nplusone, name='nplusone'),
+    url(r'memspike/$', views.memspike, name='memspike'),
 ]

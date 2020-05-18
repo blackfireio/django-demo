@@ -10,7 +10,7 @@ for c in Comment.objects.all():
 print(Comment.objects.count())
 
 new_comments = []
-for i in range(100):
+for i in range(1000):
     new_comments.append(Comment(user=u, comment='Oh! That is awesome!'))
 Comment.objects.bulk_create(new_comments)
 
