@@ -59,8 +59,9 @@ hooks:
   # assembling the codebase.
   # pipenv install --system --ignore-pipfile
   build: |
-    pip install django
-    pip install gunicorn
+    pip install django==3.0.6
+    pip install gunicorn==20.0.4
+    pip install jinja2==2.11.2
     pip install psutil==5.6.5
     pip install blackfire==1.3.4-internal.68 --extra-index-url=https://packagecloud.io/blackfire-io/testing/pypi/simple -v --no-deps
     mkdir logs
