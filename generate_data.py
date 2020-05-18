@@ -9,9 +9,9 @@ Comment.objects.all().delete()
 print(Comment.objects.count())
 
 new_comments = []
-for i in range(1000):
+for i in range(500):
     new_comments.append(Comment(user=u, comment='Oh! That is awesome!'))
-    if (i % 1000) == 0:
+    if (i % 100) == 0:
         print(i)
 Comment.objects.bulk_create(new_comments)
 
