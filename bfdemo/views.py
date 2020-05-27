@@ -17,7 +17,7 @@ def nplusone(request):
 
 def nplusone_fix(request):
     comments = Comment.objects.select_related('user').all()
-    template = loader.get_template('nplusone.html')
+    template = loader.get_template('nplusone-fix.html')
     context = {'comments': comments}
     return HttpResponse(template.render(context, request))
 
@@ -31,6 +31,6 @@ def memspike(request):
 
 def memspike_fix(request):
     comments = Comment.objects.all().iterator()
-    template = loader.get_template('memspike.html')
+    template = loader.get_template('memspike-fix.html')
     context = {'comments': comments}
     return HttpResponse(template.render(context, request))

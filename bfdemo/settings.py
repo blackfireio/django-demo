@@ -122,3 +122,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+import sys
+import django
+
+print(
+    "*** RUNNING mypolls with Django %s on Python %s" %
+    (django.VERSION, sys.version_info)
+)

@@ -7,6 +7,8 @@ For more information on this file, see
 https://docs.djangoproject.com/en/3.0/howto/deployment/asgi/
 """
 
+# uvicorn mypolls.asgi:application --reload
+
 import os
 
 from django.core.asgi import get_asgi_application
