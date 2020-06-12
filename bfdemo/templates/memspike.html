@@ -1,40 +1,4 @@
-<head>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-</head>
-
 <body>
-    <!--
-    <h3>Model</h3>
-    <pre><code id="sourcecode" class="python">
-class Comment(models.Model):
-    comment = models.CharField(max_length=255)
-    user = models.ForeignKey(User)
-    </code></pre>
-
-    <h3>View</h3>
-    <pre><code id="sourcecode" class="python">
-def get_comments(request):
-    comments = Comment.objects.all()
-
-    template = loader.get_template('comments.html')
-    context = {'comments': comments}
-    return HttpResponse(template.render(context, request))
-    </code></pre>
-
-    <h3>Template Code</h3>
-    <pre><code id="sourcecode" class="python">
-        {% raw %}
-{% for c in comments %}
-    {{c.comment}}
-{% endfor %}
-        {% endraw %}
-    </code></pre>
-
-    <h3>Rendered Page</h3>
--->
-
     {% for c in comments %}
     {{c.comment}}</br>
     {% endfor %}

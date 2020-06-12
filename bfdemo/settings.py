@@ -26,7 +26,7 @@ SECRET_KEY = '&#yguw&qjfa_%94kbwku!+e$*t)$1zkcv)a(omb(qrz%o_mi9a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ENABLE_BLACKFIRE = True
+#ENABLE_BLACKFIRE = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -50,10 +50,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'blackfire.middleware.DjangoMiddleware',
 ]
 
-if ENABLE_BLACKFIRE:
-    MIDDLEWARE += ['blackfire.middleware.DjangoMiddleware']
+# if ENABLE_BLACKFIRE:
+#     MIDDLEWARE += ['blackfire.middleware.DjangoMiddleware']
 
 ROOT_URLCONF = 'bfdemo.urls'
 
