@@ -16,7 +16,7 @@ def dummy(request):
 def nplusone(request):
 
     # make a dummy HTTP call
-    _ = requests.get('http://127.0.0.1:8000/dummy')
+    _ = requests.get('http://localhost:8000/dummy')
 
     comments = Comment.objects.all()
     #comments = Comment.objects.select_related('user').all()
