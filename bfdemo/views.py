@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+import requests
 from django.http import HttpResponse
 from .models import Comment
 from django.template import loader
@@ -9,6 +10,7 @@ from django.template import loader
 
 
 def nplusone(request):
+    _ = requests.get('https://blackfire.io/')
     comments = Comment.objects.all()
     template = loader.get_template('nplusone.html')
     context = {'comments': comments}
