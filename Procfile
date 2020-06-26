@@ -1,1 +1,1 @@
-web: gunicorn bdemo.wsgi:application
+web: gunicorn bfdemo.wsgi:application
