@@ -68,7 +68,5 @@ hooks:
     pip install jinja2==2.11.2
     pip install requests==2.23.0
     pip install blackfire==1.4.1-internal.10 --extra-index-url=https://packagecloud.io/blackfire-io/testing/pypi/simple -v --no-deps
-    mkdir logs
-    rm -rf logs
   deploy: |
     python manage.py migrate
