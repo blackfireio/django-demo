@@ -35,9 +35,7 @@ web:
         socket_family: unix
     # Commands are run once after deployment to start the application process.
     commands:
-        start: 
-            "gunicorn -w 4 -b unix:$SOCKET bfdemo.wsgi:application"
-            "echo 123"
+        start: "gunicorn -w 4 -b unix:$SOCKET bfdemo.wsgi:application &"
     locations:
         "/":
             passthru: true
