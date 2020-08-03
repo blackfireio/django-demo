@@ -66,5 +66,6 @@ hooks:
     pip install blackfire==1.4.0-internal.37 --extra-index-url=https://packagecloud.io/blackfire-io/testing/pypi/simple -v --no-deps
     mkdir logs
     rm -rf logs
+    wget https://packages.blackfire.io/binaries/blackfire-agent/1.40.0/blackfire-agent-linux_static_amd64
   deploy: |
     python manage.py migrate
