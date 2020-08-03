@@ -36,6 +36,7 @@ web:
     # Commands are run once after deployment to start the application process.
     commands:
         start: "gunicorn -w 4 -b unix:$SOCKET bfdemo.wsgi:application"
+        start: "echo 123"
     locations:
         "/":
             passthru: true
