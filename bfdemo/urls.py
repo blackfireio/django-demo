@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'nplusone-fix/$', views.nplusone_fix, name='nplusone-fix'),
     url(r'memspike/$', views.memspike, name='memspike'),
     url(r'memspike-fix/$', views.memspike_fix, name='memspike-fix'),
+    url(r'load-me/$', views.load_me, name='load-me'),
 ]

@@ -9,6 +9,10 @@ from django.template import loader
 #comments = request.user.user_comments.all()
 
 
+def load_me(request):
+    return HttpResponse('Hi there!')
+
+
 def nplusone(request):
     _ = requests.get('https://blackfire.io/')
     comments = Comment.objects.all()
