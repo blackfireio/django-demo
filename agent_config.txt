@@ -43,13 +43,13 @@ log-level=1
 ; setting: server-id
 ; desc   : Sets the server id used to authenticate with Blackfire API
 ; default: 
-server-id=
+server-id=078553d7-0d9a-4a38-bf14-0548fe62a57c
 
 ;
 ; setting: server-token
 ; desc   : Sets the server token used to authenticate with Blackfire API. It is unsafe to set this from the command line
 ; default: 
-server-token=
+server-token=f2d74c08d46744202d57eff5d3e0e03acbd2f88f798f9300301063e71cfe79c4
 
 ;
 ; setting: socket
