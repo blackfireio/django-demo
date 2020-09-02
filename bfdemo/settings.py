@@ -10,8 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
-# import blackfire
-# blackfire.patch_all()
+import blackfire
+blackfire.patch_all()
 
 import os
 
@@ -52,8 +52,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-if ENABLE_BLACKFIRE:
-    MIDDLEWARE += ['blackfire.middleware.DjangoMiddleware']
+# if ENABLE_BLACKFIRE:
+#     MIDDLEWARE += ['blackfire.middleware.DjangoMiddleware']
 
 ROOT_URLCONF = 'bfdemo.urls'
 
