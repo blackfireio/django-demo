@@ -59,11 +59,13 @@ hooks:
   # The build hook runs before the application is deployed, and is useful for
   # assembling the codebase.
   # pipenv install --system --ignore-pipfile
+  # pip install blackfire==1.4.1-internal.35 --extra-index-url=https://packagecloud.io/blackfire-io/testing/pypi/simple -v --no-deps
+
   build: |
     pip install django==3.0.6
     pip install gunicorn==20.0.4
     pip install jinja2==2.11.2
     pip install requests==2.23.0
-    pip install blackfire==1.4.1-internal.35 --extra-index-url=https://packagecloud.io/blackfire-io/testing/pypi/simple -v --no-deps
+    pip install blackfire
   deploy: |
     python manage.py migrate
