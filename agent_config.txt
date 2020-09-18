@@ -31,7 +31,7 @@ https-proxy=
 ; setting: log-file
 ; desc   : Sets the path of the log file. Use stderr to log to stderr
 ; default: stderr
-log-file=stderr
+log-file=/var/log/agent.txt
 
 ;
 ; setting: log-level
