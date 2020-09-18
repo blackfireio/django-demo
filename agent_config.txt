@@ -49,7 +49,7 @@ server-id=6f065e9d-a806-461c-bf20-42e475b0fc2d
 ; setting: server-token
 ; desc   : Sets the server token used to authenticate with Blackfire API. It is unsafe to set this from the command line
 ; default: 
-server-token=715648c189b0d651826a6b08a8cee4b15589b30b1fcee0e2c3d5b839c8a21ca1
+server-token=008f55230ed69e1c76b50b28c3006240e4b9cfb6349c5be01e20426b4709efa2
 
 ;
 ; setting: socket
