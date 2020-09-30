@@ -7,6 +7,8 @@ import time
 from django.http import HttpResponse
 from .models import Comment
 from django.template import loader
+from django.views import View
+from django.contrib.auth.models import User
 
 
 #comments = request.user.user_comments.all()
@@ -28,7 +30,17 @@ def weighted_random(weight_dict):
 
 
 def load_me(request):
-    v = weighted_random({2: 5, 1.5: 10, 0.9: 20, 0.6: 25, 0.3: 10, 0.1: 30})
+    v = weighted_random(
+        {
+            2: 5,
+            1.5: 10,
+            0.9: 20,
+            0.6: 25,
+            0.3: 10,
+            0.1: 20,
+            0.05: 10
+        }
+    )
     time.sleep(v)
 
     err = weighted_random({True: 5, False: 95})
@@ -47,8 +59,47 @@ def load_me(request):
     return HttpResponse(response)
 
 
+def apm_autoprofile(request):
+    return HttpResponse("autoprofile page")
+
+
+class AllInOneView(View):
+
+    def get(self, request):
+
+        # generate user if not exists
+        try:
+            user = User.objects.get(username='sumer')
+        except User.DoesNotExist:
+            user = None
+
+        if user is None:
+            user = User.objects.create_user(
+                'sumer', 'sumer@cip.com', 'password'
+            )
+            user.save()
+
+        from django.contrib.auth import authenticate, login
+        user = authenticate(
+            request=request, username='sumer', password='password'
+        )
+        login(request, user)
+
+        if request.user.is_authenticated:
+            print("User is authenticated")
+
+        request.session['test'] = 1
+        _ = request.session['test']
+        _ = request.session.get('not_existent_key', None)
+        request.session.delete('test')
+
+        template = loader.get_template('allinone.html')
+        context = {}
+        return HttpResponse(template.render(context, request))
+
+
 def nplusone(request):
-    _ = requests.get('https://blackfire.io/')
+    #_ = requests.get('https://blackfire.io/')
     comments = Comment.objects.all()
     template = loader.get_template('nplusone.html')
     context = {'comments': comments}
