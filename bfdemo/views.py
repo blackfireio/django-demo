@@ -9,6 +9,9 @@ from .models import Comment
 from django.template import loader
 from django.views import View
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
+from django.core.cache import cache
+from django.core.signals import request_finished
 
 
 #comments = request.user.user_comments.all()
@@ -63,6 +66,10 @@ def apm_autoprofile(request):
     return HttpResponse("autoprofile page")
 
 
+def _my_req_finished_callback(sender, **kwargs):
+    print('_my_req_finished_callback callled!')
+
+
 class AllInOneView(View):
 
     def get(self, request):
@@ -79,7 +86,7 @@ class AllInOneView(View):
             )
             user.save()
 
-        from django.contrib.auth import authenticate, login
+        # auth
         user = authenticate(
             request=request, username='sumer', password='password'
         )
@@ -88,13 +95,25 @@ class AllInOneView(View):
         if request.user.is_authenticated:
             print("User is authenticated")
 
+        # session
         request.session['test'] = 1
         _ = request.session['test']
         _ = request.session.get('not_existent_key', None)
         request.session.delete('test')
 
+        # cache
+        cache.set('k', 1)
+        v = cache.get('k')
+        cache.incr('k')
+        cache.decr('k')
+
+        # signals
+        request_finished.connect(_my_req_finished_callback)
+
+        # load template
         template = loader.get_template('allinone.html')
         context = {}
+
         return HttpResponse(template.render(context, request))
 
 
