@@ -52,7 +52,7 @@ def load_me(request):
 
     spike_mem = weighted_random({True: 15, False: 85})
     if spike_mem:
-        d = ['A'] * 100_000_000
+        d = ['A'] * 100000000
 
     response = 'Hi there!'
     spike_output = weighted_random({True: 20, False: 80})
