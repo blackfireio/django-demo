@@ -1,1 +1,1 @@
-web: gunicorn bfdemo.wsgi:application
+web: blackfire-python gunicorn bfdemo.wsgi:application
