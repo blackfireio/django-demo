@@ -20,14 +20,14 @@ scenarios: |
     scenario
         name 'load-me!'
 
-        visit url('/load-me')
+        visit url('/load-me/')
             expect status_code() == 200
 
     scenario
         name 'Test multiple visits'
 
-        visit url('/nplusone')
+        visit url('/nplusone/')
             expect status_code() == 200
 
-        visit url('/nplusone-fix')
+        visit url('/nplusone-fix/')
             expect status_code() == 200
