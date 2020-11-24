@@ -12,10 +12,10 @@ scenarios: |
     #!blackfire-player
 
     scenario
-        name 'The homepage should answer with a 200 status code'
+        name 'The homepage should answer with a 404 status code'
 
         visit url('/')
-            expect status_code() == 200
+            expect status_code() == 404
 
     scenario
         name 'load-me!'
