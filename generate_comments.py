@@ -1,3 +1,5 @@
+# This file can be run as following for testing:
+# blackfire-python run ./manage.py shell < generate_comments.py
 from bfdemo.models import Comment
 from django.contrib.auth.models import User
 
@@ -10,5 +12,7 @@ Comment.objects.bulk_create(new_comments)
 
 c = Comment(user=u, comment='a comment')
 c.save()
+
+cs = list(Comment.objects.all())
 
 print(Comment.objects.count())
