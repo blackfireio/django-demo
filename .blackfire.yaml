@@ -1,0 +1,11 @@
+metrics:
+  django.models.created:
+    label: "A Django model object is created"
+    layer: entities.created
+    matching_calls:
+      python:
+#        - callee:
+#            selector: "=django.db.models.base.from_db"
+#            argument:
+#              1: "*"
+        - callee: '/django\.db\.models\.base\.[^.]+\.__init__/'
