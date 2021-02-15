@@ -18,6 +18,12 @@ scenarios: |
             expect status_code() == 404
 
     scenario
+        name 'load-me!'
+
+        visit url('/load-me/')
+            expect status_code() == 200
+
+    scenario
         name 'Test multiple visits'
 
         visit url('/nplusone/')
