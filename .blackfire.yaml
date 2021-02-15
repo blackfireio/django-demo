@@ -21,7 +21,7 @@ scenarios: |
         name 'load-me!'
 
         visit url('/load-me/')
-            expect status_code() == 200
+            name 'load me2'
 
     scenario
         name 'Test multiple visits'
