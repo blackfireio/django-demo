@@ -23,3 +23,5 @@ scenarios: |
         visit url('/nplusone/')
             expect status_code() == 200
 
+        visit url('/nplusone-fix/')
+            expect status_code() == 200
