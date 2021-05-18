@@ -64,4 +64,4 @@ hooks:
   build: |
     pipenv install --system --deploy
   deploy: |
-    python manage.py migrate
+    #python manage.py migrate
