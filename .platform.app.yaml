@@ -66,6 +66,6 @@ hooks:
     pip install gunicorn==20.0.4
     pip install jinja2==2.11.2
     pip install requests==2.23.0
-    pip install blackfire
+    pip install blackfire==1.5.3
   deploy: |
     python manage.py migrate
