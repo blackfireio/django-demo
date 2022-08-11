@@ -2,7 +2,7 @@ asgiref==3.3.4
 blackfire==1.5.6
 certifi==2020.12.5
 chardet==4.0.0
-Django==3.2.3
+Django==3.2.15
 gunicorn==20.1.0
 idna==2.10
 Jinja2==3.0.0
